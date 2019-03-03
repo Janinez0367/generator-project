@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>jQuery template</title>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script>// my own jQuery/javascript
-        $(function(){
-            
+    <title>If you get lost information Card</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Acme|Dancing+Script|Gloria+Hallelujah|Kaushan+Script|Lobster|Poiret+One|Roboto" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(function() {
+            $('#create').click(function() {
+                $('div').fadeIn();
+                var name = $('#name').val();
+                var address = $('#address').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var color = $('#color').val();
+                var fontStyle = $('select').val();
+                $('h3').html(name).css({ 'color': color, 'font-family': fontStyle });
+                $('#address1').html(address).css({ 'color': color, 'font-family': fontStyle });
+                $('#phone1').html(phone).css({ 'color': color, 'font-family': fontStyle });
+                $('#email1').html(email).css({ 'color': color, 'font-family': fontStyle });
+            });
         });
     </script>
-  </head>
-  <body>
-  
-  </body>
+</head>
+
+<body>
+    <h4>Name: <input id="name"><br> 
+    Address: <input id="address"><br> 
+    Email: <input id="email"><br> Phone
+    Number: <input id="phone"><br> 
+    Color of Text: <input id="color"><br> 
+    Font Style:
+    <select>
+     <option value='Arial'>Arial</option>
+     <option value='Times New Roman'>Times New Roman</option>
+     <option value='Acme'>Acme</option>
+     <option value='Roboto'>Roboto</option>
+     <option value='Poiret One'>Poiret One</option>
+ </select><br>
+    <button id='create'>Create </button><br>
+    
+    <div>
+        <h3></h3>
+        <span id="address1"></span>
+        <span id="phone1"></span>
+        <span id="email1"></span>
+
+    </div>
+</body>
+
 </html>
